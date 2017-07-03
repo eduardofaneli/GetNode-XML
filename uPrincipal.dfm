@@ -1,6 +1,6 @@
 object frmGetNode: TfrmGetNode
-  Left = 177
-  Top = 54
+  Left = 169
+  Top = 65
   Caption = 'GetNode'
   ClientHeight = 620
   ClientWidth = 1138
@@ -26,24 +26,62 @@ object frmGetNode: TfrmGetNode
     BevelKind = bkTile
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitLeft = 356
-    ExplicitHeight = 442
-    object memoRetorno: TMemo
+    object gbRetornoGetNode: TGroupBox
+      Left = 0
+      Top = 140
+      Width = 552
+      Height = 476
+      Align = alClient
+      Caption = 'Retorno GetNode'
+      TabOrder = 0
+      ExplicitTop = 0
+      ExplicitHeight = 297
+      object memoRetorno: TMemo
+        Left = 2
+        Top = 15
+        Width = 548
+        Height = 459
+        Align = alClient
+        Color = clBlack
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clGreen
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        ScrollBars = ssVertical
+        TabOrder = 0
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 552
+        ExplicitHeight = 616
+      end
+    end
+    object gbRetornoTag: TGroupBox
       Left = 0
       Top = 0
       Width = 552
-      Height = 616
-      Align = alClient
-      Color = clBlack
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clGreen
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      ScrollBars = ssVertical
-      TabOrder = 0
-      ExplicitHeight = 438
+      Height = 140
+      Align = alTop
+      Caption = 'Retorno GetTag'
+      TabOrder = 1
+      object mmGetTag: TMemo
+        Left = 2
+        Top = 15
+        Width = 548
+        Height = 123
+        Align = alClient
+        Color = clBlack
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clGreen
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        ScrollBars = ssVertical
+        TabOrder = 0
+        ExplicitHeight = 280
+      end
     end
   end
   object pnlEsquerda: TPanel
@@ -56,15 +94,13 @@ object frmGetNode: TfrmGetNode
     Color = clWindow
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 356
-    ExplicitHeight = 442
     object memoEntrada: TMemo
       AlignWithMargins = True
       Left = 3
-      Top = 185
+      Top = 268
       Width = 576
-      Height = 432
-      Align = alClient
+      Height = 349
+      Align = alBottom
       Color = clBlack
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clGreen
@@ -74,9 +110,6 @@ object frmGetNode: TfrmGetNode
       ParentFont = False
       ScrollBars = ssBoth
       TabOrder = 0
-      ExplicitLeft = 2
-      ExplicitTop = 196
-      ExplicitHeight = 421
     end
     object pnlCaminho: TPanel
       Left = 0
@@ -100,25 +133,19 @@ object frmGetNode: TfrmGetNode
         OnClick = btnCarregarXMLClick
         PngImage.Data = {
           89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
-          F800000006624B474400FF00FF00FFA0BDA793000001E74944415478DAE5D44F
-          4854411CC0F15954A25B60084145E8821D3CA8082994927F10A190442F764F50
-          0A127525108F628148A8E0C98B7AD20ED222622A686407978440A80E75A81021
-          F126E9867D7FBCDFC432BCF77C0A1DC481CF6167E6CD6FE73733BF98F9CF2D76
-          6E03C4711DCBA70D908D23FC09184FE2326EE9EF2C5D2B1D35C07394A30EBF9D
-          B10BD8C510FAF4F71BBC43224A8026CC6210BD3EE3D558421556B54FE676A319
-          AFC202E423858FBA50DA27C000DA919B312E295D41114AF1D52F806CF52D6EA0
-          04DF03D297D2B146A7FF2A3EE8E2B771E00618C663DCC37CC0E279D8C6138CF8
-          8C37E0355EE26966009B77D9FE3313DC5A3185427C0E98236B24EC7948806BBA
-          B52FA8C461488009E31D6E7EC89C1CACA140CE4302C435AF5BC7048869EE2505
-          6D1102DC44994D91E47D0EA37A0E7E4D6E88DCAE16CC840490B3915B761FC9CC
-          437E812E3CC4B4CF879DC67B80F282F70216976F2775AD1EBB6DDBEC5D2E96AD
-          E193F3B1DCAC4BA808585C0E7E039BB86BF48DB80FCDDEE59FC62B15FBDA7F11
-          BFF49FF5FB2C2EE3EF71C5780FEDDF1BF22B153558C0383AB4AF168BB863BCC7
-          E8B6313C42BDF1CA88090B60CF432AA52D76526BDA34FF6EF9B0C56EDDE63D4A
-          00B75C4BDABEE141C0FC13976BB7496DDAC18F88F34F1CE0D4EDEC07F80B7FD4
-          625A084423990000000049454E44AE426082}
-        ExplicitTop = 30
-        ExplicitHeight = 25
+          F800000006624B474400FF00FF00FFA0BDA793000001734944415478DA6364A0
+          31601CB5600458E0BB75B50F909A04B44A91CA66DFFBCFC890CBE8BB6DCD2320
+          4796461E7808B2E03F6D83088B05ECCCCC0CE12A9A0C2BEE5C6770955160B8F6
+          EE0D839D942CC3D1174F19EE7C7CCF10ACA40EA6F9D9D819EE7DFAC0F0E4EB67
+          D22C00816A234B86DB40437CE45518D20EEE6058E5E6CFB0F5E15D8655776F30
+          2C70F2065BAECC27C0B0E7C90386132F9F916E81A6A030439BB91DC39ABBB718
+          96DEBECAB0D2D59FE1E1E78F0C1B1FDC6148D6D463D80D3498220BF485C5181A
+          4CADC1062EB87199619D7B20C371A0419C2C2C0C9F7FFD6278F1FD2B6516B402
+          5D7FF4F9138668356D86CC43BB189638FB304CBE7C96214C4583E1C0D3470CFF
+          806A4016BCF8F6151C1F475E3C61F8F3EF1FF191EC2DAFCCB0E5C15D066B4969
+          86BB1F3F30988A49825DAB010C3A900F4040909D9D418A9B17CCDEF8E036C3AF
+          BF7F89F701B500C88227405A9A46E63F8614158C0C3381764951D9F0A7C0A222
+          6D1894A6A3160CB80500D07EA59BA8F44D560000000049454E44AE426082}
       end
       object pnlCaminhos: TPanel
         Left = 0
@@ -138,8 +165,7 @@ object frmGetNode: TfrmGetNode
           Color = clMenu
           ReadOnly = True
           TabOrder = 0
-          ExplicitWidth = 426
-          ExplicitHeight = 19
+          ExplicitHeight = 21
         end
         object btnLimparCaminho: TPngBitBtn
           AlignWithMargins = True
@@ -174,7 +200,6 @@ object frmGetNode: TfrmGetNode
             97EF89FF65FD7BE03F03A306A58663B500042EDEBE2DF3EF2FE34120530926F6
             EFFF7F86576FDF33FCFCF59BA0A1014ED68C782DA02618FA160000DD17EC1974
             79B1010000000049454E44AE426082}
-          ExplicitLeft = 547
         end
       end
     end
@@ -243,6 +268,62 @@ object frmGetNode: TfrmGetNode
           'Xml do Memo')
         TabOrder = 2
       end
+    end
+    object gbTag: TGroupBox
+      Left = 0
+      Top = 182
+      Width = 582
+      Height = 43
+      Align = alTop
+      Caption = 'Tag'
+      TabOrder = 3
+      object edtGetTag: TEdit
+        AlignWithMargins = True
+        Left = 5
+        Top = 18
+        Width = 572
+        Height = 21
+        Align = alTop
+        Color = clInfoBk
+        TabOrder = 0
+        ExplicitWidth = 566
+      end
+    end
+    object btnGetTag: TPngBitBtn
+      Left = 0
+      Top = 225
+      Width = 582
+      Height = 28
+      Align = alTop
+      Caption = 'Processar Tag'
+      TabOrder = 4
+      OnClick = btnGetTagClick
+      PngImage.Data = {
+        89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+        F800000006624B474400FF00FF00FFA0BDA793000002BF4944415478DAED945F
+        48537114C77FBFDFBD61B44D0B3490A89C4445440F0991A4DB15C29873E58469
+        6F4142E075102194BDC4A007293224360D227CCA07CD4D9A7F88B06D2AD54306
+        09650CD99F42AC6550EE6634F5773AF721DD1CB6A4F6E6810BDFDFEFFCCEF99C
+        7BCEEF5E4AB26C74139015405147DCC838CC86ECB9C1AC00F4AEF814461E2404
+        0C613977ECBF02F63ABF1F658C4F10209FC205DA5DA48E2E6F182059BCF920B2
+        6E0670D5D75F3D91EC2BEE546E00C06520A43322EB6449F289B063A10DD7C151
+        8FD995115062F16ED38A6C04E571F47A036EF3E9152700D5772A5154BB31A184
+        8080D1EA2D258405704FA094D6FBDD550FD705984C43390B5B61186505661B4F
+        880B95CF7BEB7EACB4E7EE7C29E3F41906CD8462DA3DC441B9BA6FA81DAAA700
+        DD289719038BAFAFFA713AC0E160C6D7C71E60E2B3B87A2B929F86114FED97D4
+        F6C4DB01C8450C6A0FC9BA4BC93E63ED804C80AA2D8A636B2B7EB7760520D50C
+        DC024A9B514605919F78DA6B9949E95D0F08FA39E503AA4220BC3422E7BD489B
+        DD6A8ECF38F9B2718F39B80AB00E3AB1AF4D282308285B0B50EF3E1EF6634D91
+        70A3A698500A6B0106EB602B9E69413947192FF7F759DE25CD00A8641DEE0202
+        E70885692AD0727FAFF96312A0030F37E2206F861AB557D2AAB70EB620B115E5
+        37CE9861ACCF349936E4920B2FB76862312F16770A97931412467FBFF5ABE400
+        31BA5399C5BD7CCE5949D4AE79955279CD400382EFA14C6071A680BBDAB7EE35
+        3D697B92B7B89418457904DD8F029EAA337A97528981EACD088665DD8194E1AE
+        5E53119F8680C7DCF5C7EF40B572DB50015B846E2EB066F5558B5CCA7D7CABF3
+        F8F55E0F37E9AE259FB5D97A84D892E6360EF7FDA8BBAA6D6DAE8CBF8A7D7720
+        675954D4596C1738393C6DD7BDC914B32180DE19371046D4164C617B0E6D24F9
+        5F01542B76CEEFE78C16AABF86AC00FEC5360119ED1722A711286E9C2D770000
+        000049454E44AE426082}
     end
   end
 end
