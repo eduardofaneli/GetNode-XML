@@ -1,8 +1,8 @@
 object frmGetNode: TfrmGetNode
-  Left = 169
-  Top = 65
+  Left = 150
+  Top = 53
   Caption = 'GetNode'
-  ClientHeight = 620
+  ClientHeight = 641
   ClientWidth = 1138
   Color = clWindow
   Font.Charset = DEFAULT_CHARSET
@@ -21,7 +21,7 @@ object frmGetNode: TfrmGetNode
     Left = 582
     Top = 0
     Width = 556
-    Height = 620
+    Height = 641
     Align = alRight
     BevelKind = bkTile
     BevelOuter = bvNone
@@ -30,17 +30,15 @@ object frmGetNode: TfrmGetNode
       Left = 0
       Top = 140
       Width = 552
-      Height = 476
+      Height = 497
       Align = alClient
       Caption = 'Retorno GetNode'
       TabOrder = 0
-      ExplicitTop = 0
-      ExplicitHeight = 297
       object memoRetorno: TMemo
         Left = 2
         Top = 15
         Width = 548
-        Height = 459
+        Height = 480
         Align = alClient
         Color = clBlack
         Font.Charset = DEFAULT_CHARSET
@@ -51,10 +49,6 @@ object frmGetNode: TfrmGetNode
         ParentFont = False
         ScrollBars = ssVertical
         TabOrder = 0
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 552
-        ExplicitHeight = 616
       end
     end
     object gbRetornoTag: TGroupBox
@@ -80,7 +74,6 @@ object frmGetNode: TfrmGetNode
         ParentFont = False
         ScrollBars = ssVertical
         TabOrder = 0
-        ExplicitHeight = 280
       end
     end
   end
@@ -88,7 +81,7 @@ object frmGetNode: TfrmGetNode
     Left = 0
     Top = 0
     Width = 582
-    Height = 620
+    Height = 641
     Align = alClient
     BevelOuter = bvNone
     Color = clWindow
@@ -97,10 +90,10 @@ object frmGetNode: TfrmGetNode
     object memoEntrada: TMemo
       AlignWithMargins = True
       Left = 3
-      Top = 268
+      Top = 356
       Width = 576
-      Height = 349
-      Align = alBottom
+      Height = 282
+      Align = alClient
       Color = clBlack
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clGreen
@@ -208,9 +201,8 @@ object frmGetNode: TfrmGetNode
       Left = 3
       Top = 65
       Width = 576
-      Height = 114
+      Height = 172
       Align = alTop
-      Caption = 'Node'
       TabOrder = 2
       object lblCont: TLabel
         Left = 28
@@ -218,10 +210,30 @@ object frmGetNode: TfrmGetNode
         Width = 3
         Height = 13
       end
+      object lblExpressaoRegular: TLabel
+        AlignWithMargins = True
+        Left = 5
+        Top = 18
+        Width = 566
+        Height = 13
+        Align = alTop
+        Caption = 'Express'#227'o Regular'
+        ExplicitWidth = 90
+      end
+      object Label1: TLabel
+        AlignWithMargins = True
+        Left = 5
+        Top = 61
+        Width = 566
+        Height = 13
+        Align = alTop
+        Caption = 'Node'
+        ExplicitWidth = 25
+      end
       object btnProcessarNode: TPngBitBtn
         AlignWithMargins = True
         Left = 5
-        Top = 81
+        Top = 139
         Width = 566
         Height = 28
         Align = alBottom
@@ -248,32 +260,44 @@ object frmGetNode: TfrmGetNode
       object edtNode: TEdit
         AlignWithMargins = True
         Left = 5
-        Top = 18
+        Top = 77
         Width = 566
         Height = 21
         Align = alTop
         Color = clInfoBk
-        TabOrder = 1
+        TabOrder = 2
       end
       object rgXML: TRadioGroup
-        Left = 2
-        Top = 42
-        Width = 572
-        Height = 35
+        AlignWithMargins = True
+        Left = 5
+        Top = 104
+        Width = 566
+        Height = 31
         Align = alTop
         Columns = 2
         ItemIndex = 0
         Items.Strings = (
           'Xml do Arquivo'
           'Xml do Memo')
-        TabOrder = 2
+        TabOrder = 3
+      end
+      object edtExpressaoRegular: TEdit
+        AlignWithMargins = True
+        Left = 5
+        Top = 34
+        Width = 566
+        Height = 21
+        Align = alTop
+        Color = clInfoBk
+        TabOrder = 1
+        TextHint = 'Ex: (ns[0-9]{1,}\:)|(\:ns[0-9]{1,})'
       end
     end
     object gbTag: TGroupBox
       Left = 0
-      Top = 182
+      Top = 240
       Width = 582
-      Height = 43
+      Height = 113
       Align = alTop
       Caption = 'Tag'
       TabOrder = 3
@@ -286,44 +310,59 @@ object frmGetNode: TfrmGetNode
         Align = alTop
         Color = clInfoBk
         TabOrder = 0
-        ExplicitWidth = 566
       end
-    end
-    object btnGetTag: TPngBitBtn
-      Left = 0
-      Top = 225
-      Width = 582
-      Height = 28
-      Align = alTop
-      Caption = 'Processar Tag'
-      TabOrder = 4
-      OnClick = btnGetTagClick
-      PngImage.Data = {
-        89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
-        F800000006624B474400FF00FF00FFA0BDA793000002BF4944415478DAED945F
-        48537114C77FBFDFBD61B44D0B3490A89C4445440F0991A4DB15C29873E58469
-        6F4142E075102194BDC4A007293224360D227CCA07CD4D9A7F88B06D2AD54306
-        09650CD99F42AC6550EE6634F5773AF721DD1CB6A4F6E6810BDFDFEFFCCEF99C
-        7BCEEF5E4AB26C74139015405147DCC838CC86ECB9C1AC00F4AEF814461E2404
-        0C613977ECBF02F63ABF1F658C4F10209FC205DA5DA48E2E6F182059BCF920B2
-        6E0670D5D75F3D91EC2BEE546E00C06520A43322EB6449F289B063A10DD7C151
-        8FD995115062F16ED38A6C04E571F47A036EF3E9152700D5772A5154BB31A184
-        8080D1EA2D258405704FA094D6FBDD550FD705984C43390B5B61186505661B4F
-        880B95CF7BEB7EACB4E7EE7C29E3F41906CD8462DA3DC441B9BA6FA81DAAA700
-        DD289719038BAFAFFA713AC0E160C6D7C71E60E2B3B87A2B929F86114FED97D4
-        F6C4DB01C8450C6A0FC9BA4BC93E63ED804C80AA2D8A636B2B7EB7760520D50C
-        DC024A9B514605919F78DA6B9949E95D0F08FA39E503AA4220BC3422E7BD489B
-        DD6A8ECF38F9B2718F39B80AB00E3AB1AF4D282308285B0B50EF3E1EF6634D91
-        70A3A698500A6B0106EB602B9E69413947192FF7F759DE25CD00A8641DEE0202
-        E70885692AD0727FAFF96312A0030F37E2206F861AB557D2AAB70EB620B115E5
-        37CE9861ACCF349936E4920B2FB76862312F16770A97931412467FBFF5ABE400
-        31BA5399C5BD7CCE5949D4AE79955279CD400382EFA14C6071A680BBDAB7EE35
-        3D697B92B7B89418457904DD8F029EAA337A97528981EACD088665DD8194E1AE
-        5E53119F8680C7DCF5C7EF40B572DB50015B846E2EB066F5558B5CCA7D7CABF3
-        F8F55E0F37E9AE259FB5D97A84D892E6360EF7FDA8BBAA6D6DAE8CBF8A7D7720
-        675954D4596C1738393C6DD7BDC914B32180DE19371046D4164C617B0E6D24F9
-        5F01542B76CEEFE78C16AABF86AC00FEC5360119ED1722A711286E9C2D770000
-        000049454E44AE426082}
+      object btnGetTag: TPngBitBtn
+        AlignWithMargins = True
+        Left = 5
+        Top = 80
+        Width = 572
+        Height = 28
+        Align = alBottom
+        Caption = 'Processar Tag'
+        TabOrder = 1
+        OnClick = btnGetTagClick
+        PngImage.Data = {
+          89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+          F800000006624B474400FF00FF00FFA0BDA793000002BF4944415478DAED945F
+          48537114C77FBFDFBD61B44D0B3490A89C4445440F0991A4DB15C29873E58469
+          6F4142E075102194BDC4A007293224360D227CCA07CD4D9A7F88B06D2AD54306
+          09650CD99F42AC6550EE6634F5773AF721DD1CB6A4F6E6810BDFDFEFFCCEF99C
+          7BCEEF5E4AB26C74139015405147DCC838CC86ECB9C1AC00F4AEF814461E2404
+          0C613977ECBF02F63ABF1F658C4F10209FC205DA5DA48E2E6F182059BCF920B2
+          6E0670D5D75F3D91EC2BEE546E00C06520A43322EB6449F289B063A10DD7C151
+          8FD995115062F16ED38A6C04E571F47A036EF3E9152700D5772A5154BB31A184
+          8080D1EA2D258405704FA094D6FBDD550FD705984C43390B5B61186505661B4F
+          880B95CF7BEB7EACB4E7EE7C29E3F41906CD8462DA3DC441B9BA6FA81DAAA700
+          DD289719038BAFAFFA713AC0E160C6D7C71E60E2B3B87A2B929F86114FED97D4
+          F6C4DB01C8450C6A0FC9BA4BC93E63ED804C80AA2D8A636B2B7EB7760520D50C
+          DC024A9B514605919F78DA6B9949E95D0F08FA39E503AA4220BC3422E7BD489B
+          DD6A8ECF38F9B2718F39B80AB00E3AB1AF4D282308285B0B50EF3E1EF6634D91
+          70A3A698500A6B0106EB602B9E69413947192FF7F759DE25CD00A8641DEE0202
+          E70885692AD0727FAFF96312A0030F37E2206F861AB557D2AAB70EB620B115E5
+          37CE9861ACCF349936E4920B2FB76862312F16770A97931412467FBFF5ABE400
+          31BA5399C5BD7CCE5949D4AE79955279CD400382EFA14C6071A680BBDAB7EE35
+          3D697B92B7B89418457904DD8F029EAA337A97528981EACD088665DD8194E1AE
+          5E53119F8680C7DCF5C7EF40B572DB50015B846E2EB066F5558B5CCA7D7CABF3
+          F8F55E0F37E9AE259FB5D97A84D892E6360EF7FDA8BBAA6D6DAE8CBF8A7D7720
+          675954D4596C1738393C6DD7BDC914B32180DE19371046D4164C617B0E6D24F9
+          5F01542B76CEEFE78C16AABF86AC00FEC5360119ED1722A711286E9C2D770000
+          000049454E44AE426082}
+      end
+      object rgTag: TRadioGroup
+        AlignWithMargins = True
+        Left = 5
+        Top = 45
+        Width = 572
+        Height = 32
+        Align = alTop
+        Caption = 'Buscar Tag'
+        Columns = 2
+        ItemIndex = 0
+        Items.Strings = (
+          'Xml Entrada'
+          'Xml Node')
+        TabOrder = 2
+      end
     end
   end
 end

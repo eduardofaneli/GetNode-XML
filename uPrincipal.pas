@@ -24,12 +24,16 @@ type
     edtNode: TEdit;
     rgXML: TRadioGroup;
     gbTag: TGroupBox;
-    btnGetTag: TPngBitBtn;
     edtGetTag: TEdit;
     gbRetornoGetNode: TGroupBox;
     memoRetorno: TMemo;
     gbRetornoTag: TGroupBox;
     mmGetTag: TMemo;
+    edtExpressaoRegular: TEdit;
+    lblExpressaoRegular: TLabel;
+    Label1: TLabel;
+    btnGetTag: TPngBitBtn;
+    rgTag: TRadioGroup;
     procedure btnCarregarXMLClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -88,8 +92,52 @@ procedure TfrmGetNode.btnGetTagClick(Sender: TObject);
 begin
 
   case rgXML.ItemIndex of
-    0: mmGetTag.Text := GetTagPos(FXml.Text, Trim(edtGetTag.Text));
-    1: mmGetTag.Text := GetTagPos('(ns[0-9]{1,}\:)|(\:ns[0-9]{1,})', memoEntrada.Text, Trim(edtGetTag.Text));
+    0:
+    begin
+
+      case rgTag.ItemIndex of
+        0:
+        begin
+          if Trim(edtExpressaoRegular.Text) <> EmptyStr then
+            mmGetTag.Text := GetTagPos(edtExpressaoRegular.Text, FXml.Text, Trim(edtGetTag.Text))
+          else
+            mmGetTag.Text := GetTagPos(FXml.Text, Trim(edtGetTag.Text));
+        end;
+        1:
+        begin
+          if Trim(edtExpressaoRegular.Text) <> EmptyStr then
+            mmGetTag.Text := GetTagPos(edtExpressaoRegular.Text, memoRetorno.Text, Trim(edtGetTag.Text))
+          else
+            mmGetTag.Text := GetTagPos(memoRetorno.Text, Trim(edtGetTag.Text));
+        end;
+      end;
+
+    end;
+    1:
+    begin
+
+      case rgTag.ItemIndex of
+        0:
+        begin
+
+          if Trim(edtExpressaoRegular.Text) <> EmptyStr then
+            mmGetTag.Text := GetTagPos(edtExpressaoRegular.Text, memoEntrada.Text, Trim(edtGetTag.Text))
+          else
+            mmGetTag.Text := GetTagPos(memoEntrada.Text, Trim(edtGetTag.Text));
+
+        end;
+        1:
+        begin
+
+          if Trim(edtExpressaoRegular.Text) <> EmptyStr then
+            mmGetTag.Text := GetTagPos(edtExpressaoRegular.Text, memoRetorno.Text, Trim(edtGetTag.Text))
+          else
+            mmGetTag.Text := GetTagPos(memoRetorno.Text, Trim(edtGetTag.Text));
+
+        end;
+      end;
+
+    end;
   end;
 end;
 
@@ -105,8 +153,20 @@ procedure TfrmGetNode.btnProcessarNodeClick(Sender: TObject);
 begin
 
   case rgXML.ItemIndex of
-    0: memoRetorno.Lines := GetNodePos(FXml.Text, Trim(edtNode.Text));
-    1: memoRetorno.Lines := GetNodePos('(ns[0-9]{1,}\:)|(\:ns[0-9]{1,})', memoEntrada.Text, Trim(edtNode.Text));
+    0:
+    begin
+      if Trim(edtExpressaoRegular.Text) <> EmptyStr then
+        memoRetorno.Lines := GetNodePos(edtExpressaoRegular.Text, FXml.Text, Trim(edtNode.Text))
+      else
+        memoRetorno.Lines := GetNodePos(FXml.Text, Trim(edtNode.Text));
+    end;
+    1:
+    begin
+      if Trim(edtExpressaoRegular.Text) <> EmptyStr then
+        memoRetorno.Lines := GetNodePos(edtExpressaoRegular.Text, memoEntrada.Text, Trim(edtNode.Text))
+      else
+        memoRetorno.Lines := GetNodePos(memoEntrada.Text, Trim(edtNode.Text));
+    end;
   end;
 
   edtCaminhoArquivo.Clear;
@@ -234,15 +294,15 @@ begin
   if AUtf8ToAnsi then
   begin
 
-    sXML := UpperCase(Utf8ToAnsi(XML));
-    Strtag := UpperCase(Utf8ToAnsi(Strtag));
+    sXML := UpperCase(Utf8ToAnsi(Trim(XML)));
+    Strtag := UpperCase(Utf8ToAnsi(Trim(Strtag)));
 
   end
   else
   begin
 
-    sXML := UpperCase(XML);
-    Strtag := UpperCase(Strtag);
+    sXML := UpperCase(Trim(XML));
+    Strtag := UpperCase(Trim(Strtag));
 
   end;
 
@@ -252,9 +312,9 @@ begin
   begin
 
     InicioTag := pos('<'+ Strtag, sXML) + Length(Strtag);
-    FimTag    := Pos('</' + Strtag + '>', sXML) - Length(Strtag) -1;
+    FimTag    := Pos('</' + Strtag + '>', sXML) - Length(Strtag);
 
-    Linha := Copy(sXml, InicioTag, (FimTag - InicioTag));
+    Linha := Copy(sXml, InicioTag, (FimTag - InicioTag + Length(Strtag)));
     FimTag := Pos('</' + Strtag + '>', sXML);
 
     Delete(sXml, 1, (FimTag + Length(Strtag) + 2));
