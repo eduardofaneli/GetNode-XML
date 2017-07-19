@@ -243,8 +243,11 @@ begin
 
   if Pos('<'+Strtag,XML) > 0 then
   begin
-    if Pos('<'+Strtag+' ',XML) > 0 then
-      PosIni := Pos('<'+Strtag+' ',XML) + Length(Strtag) - 1;
+    if (Pos('<'+Strtag+' ',XML) > 0) then
+      PosIni := Pos('<'+Strtag+' ',XML) + Length(Strtag) - 1
+    else
+    if (Pos('<'+Strtag+ sLineBreak ,XML) > 0) then
+      PosIni := Pos('<'+Strtag+ sLineBreak ,XML) + Length(Strtag) - 1;
 
     if PosIni = 0 then
       PosIni := Pos('<'+Strtag+'>',XML) + Length(Strtag) - 2;
@@ -294,14 +297,14 @@ begin
   if AUtf8ToAnsi then
   begin
 
-    sXML := UpperCase(Utf8ToAnsi(Trim(XML)));
+    sXML := UpperCase(Utf8ToAnsi(XML));
     Strtag := UpperCase(Utf8ToAnsi(Trim(Strtag)));
 
   end
   else
   begin
 
-    sXML := UpperCase(Trim(XML));
+    sXML := UpperCase(XML);
     Strtag := UpperCase(Trim(Strtag));
 
   end;
